@@ -1,0 +1,11 @@
+﻿version: 0
+enabled:
+  - "form"
+  - "context"
+contracts:
+  forbid_current_race_obs_fields: true
+  current_race_obs_prefix: "obs__"
+params:
+  form_lookback_days: 180
+  min_runs_required: 3
+  context_include_market: false

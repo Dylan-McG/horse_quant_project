@@ -1,0 +1,17 @@
+﻿version: 0
+meta:
+  project: horse_quant_project
+  created_by: bootstrap
+paths:
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  external_dir: "data/external"
+schema:
+  race_id: "race_id"
+  horse_id: "horse_id"
+  event_time: "off_time"
+  target: "won"
+load:
+  sample_limit: null
+  fail_on_missing: true

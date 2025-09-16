@@ -1,0 +1,32 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# Virtualenv / Poetry / Caches
+.venv/
+.poetry/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Data / Outputs
+data/
+outputs/
+artifacts/
+
+# Notebooks
+*.ipynb_checkpoints/
+
+# Coverage
+.coverage
+htmlcov/

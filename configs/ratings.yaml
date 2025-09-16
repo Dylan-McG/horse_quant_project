@@ -1,0 +1,14 @@
+﻿version: 0
+enabled:
+  - "elo"
+  - "residual"
+blend:
+  method: "weighted_mean"
+  weights:
+    elo: 0.6
+    residual: 0.4
+elo:
+  k: 16
+  reg: 0.0
+residual:
+  window_days: 365

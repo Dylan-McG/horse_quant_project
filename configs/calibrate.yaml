@@ -1,0 +1,4 @@
+﻿version: 0
+method: "isotonic"
+per_race: true
+time_series_discipline: true

@@ -1,0 +1,11 @@
+﻿version: 0
+strategy:
+  type: "time_series"
+  seed: 42
+  group_key: "race_id"
+  time_key: "off_time"
+  n_splits: 5
+  shuffle: false
+discipline:
+  prevent_leakage: true
+  allow_future_info_in_ratings_only: false

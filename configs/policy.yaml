@@ -1,0 +1,16 @@
+﻿version: 0
+guardrails:
+  no_current_race_obs_features: true
+  current_race_obs_prefix: "obs__"
+  per_race_prob_sum_one: true
+  per_race_prob_sum_tolerance: 1e-9
+splits:
+  chronological_only: true
+  group_by: "race_id"
+  seed: 42
+acceptance:
+  quality_gates:
+    - "ruff --fix"
+    - "black"
+    - "mypy"
+    - "pytest -q"

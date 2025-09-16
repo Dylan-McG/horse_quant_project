@@ -1,0 +1,12 @@
+﻿version: 0
+source: "betfair"
+snapshot: "BSP"
+commission_rate: 0.02
+compare:
+  metrics:
+    - "logloss"
+    - "brier"
+    - "ece"
+policy:
+  require_prob_sum_one: true
+  prob_sum_tolerance: 1e-9
