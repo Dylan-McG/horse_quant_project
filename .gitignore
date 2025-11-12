@@ -30,3 +30,9 @@ Thumbs.db
 # temp & helper files
 .tmp_*.py
 *.log
+
+configs/backup/
+
+hqp.ps1
+
+horse_quant_project/

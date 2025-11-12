@@ -1,0 +1,8 @@
+﻿edge_threshold: 0.14
+max_odds: 15.0
+per_race_max_bets: 1
+bankroll_init: 1000.0
+stake_min: 0.0
+stake_max: 20.0
+kelly_fraction: 0.10
+try_join_market: true

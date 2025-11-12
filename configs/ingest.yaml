@@ -1,0 +1,37 @@
+﻿# configs/ingest.yaml
+version: 0
+
+# Source file
+raw_csv_path: "data/raw/test_dataset.csv"
+
+# Rename vendor → canonical
+rename_map:
+  racecourse_name: course
+  going_clean: going
+  race_distance: distance_m
+  obs__uposition: position   # optional; allows target derivations later
+
+# We will derive off_time from (date + race_time) in the reader.
+# So no date_columns needed here.
+date_columns: []
+
+# Light coercions (safe defaults)
+dtypes:
+  race_id: string
+  horse_id: string
+  course: string
+  going: string
+  distance_m: float
+  position: float
+
+# Minimal requireds for ingest; time will be derived from date+race_time
+required_columns:
+  - race_id
+  - horse_id
+
+# Drop rows missing keys
+drop_na_on: ["race_id","horse_id"]
+
+audit:
+  enabled: true
+  path: "reports/ingest/ingest_audit.csv"

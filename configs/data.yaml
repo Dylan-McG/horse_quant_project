@@ -1,17 +1,55 @@
-﻿version: 0
+﻿version: 1
 meta:
   project: horse_quant_project
   created_by: bootstrap
+
 paths:
   raw_dir: "data/raw"
   interim_dir: "data/interim"
   processed_dir: "data/processed"
   external_dir: "data/external"
+
+# Minimal schema/column mapping used by ingest + downstream
 schema:
   race_id: "race_id"
   horse_id: "horse_id"
-  event_time: "off_time"
-  target: "won"
+
+  # We will create this during ingest from date + race_time
+  event_time: "race_datetime"
+
+  # Target is the post-race winner indicator (eval/labels only; never a feature)
+  target: "obs__is_winner"
+
+  # Market column name (for model-vs-market; not used as a feature)
+  bsp: "obs__bsp"
+
 load:
+  # Where the raw CSV actually lives
+  raw_csv: "data/raw/test_dataset.csv"
+
+  # Build event_time by combining date + race_time, then convert to UTC
+  date_col: "date"
+  time_col: "race_time"
+  local_timezone: "Europe/London"
+  to_utc: true
+
+  # Safety + performance
   sample_limit: null
   fail_on_missing: true
+  downcast: true
+
+  # Treat these as categoricals on ingest for memory & speed
+  categorical_cols:
+    - racecourse_country
+    - racecourse_name
+    - race_type
+    - race_type_simple
+    - going_clean
+    - horse_name
+    - jockey_name
+    - trainer_name
+
+policy:
+  # Keep obs__* in canonical for evaluation, but NEVER allow them in features
+  exclude_feature_prefixes:
+    - "obs__"

@@ -12,6 +12,7 @@ model:
 training:
   group_key: "race_id"
   time_key: "off_time"
-  target: "won"
+  target: "is_win"
   per_race_normalize: true
   class_weight: null
+  n_splits: 3

@@ -1,0 +1,31 @@
+﻿version: 0
+blend:
+  # columns
+  ts_col: race_dt
+  race_id_col: race_id
+  horse_col: horse_id
+  jockey_col: jockey_id
+  trainer_col: trainer_id
+  field_size_col: field_size
+  rank_col: rank              # <-- tell Elo to use the 'rank' column
+
+  # blend weights (z-space)
+  w_horse_elo: 0.5
+  w_horse_eb: 0.3
+  w_jockey_elo: 0.1
+  w_trainer_elo: 0.1
+
+  # z-scoring half-life (days)
+  z_half_life_days: 180
+
+elo:
+  half_life_days: 180
+  k_base: 20
+  k_field_ref: 10
+  mean_rating: 1500
+
+eb:
+  half_life_days: 180
+  prior_strength: 32
+  baseline_rate: null
+  mean_center: true
