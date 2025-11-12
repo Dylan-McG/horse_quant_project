@@ -1,32 +1,32 @@
-﻿# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.so
-*.egg-info/
-.eggs/
-
-# Virtualenv / Poetry / Caches
+﻿# venv & IDE
 .venv/
-.poetry/
-.mypy_cache/
-.ruff_cache/
-.pytest_cache/
-
-# Editors / OS
 .vscode/
-.idea/
-.DS_Store
+.pyright/
+.pyrightconfig.json
 
-# Data / Outputs
-data/
-outputs/
-artifacts/
-
-# Notebooks
-*.ipynb_checkpoints/
-
-# Coverage
+# caches & coverage
+__pycache__/
+.python-version
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
 .coverage
-htmlcov/
+
+# local data & artifacts
+data/
+models/
+reports/
+release_hqp/
+release_hqp.zip
+*.parquet
+*.pkl
+*.png
+*.svg
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+
+# temp & helper files
+.tmp_*.py
+*.log
